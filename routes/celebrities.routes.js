@@ -22,7 +22,7 @@ try {
     res.redirect("/")
 
 }   catch(error){
-    next(error)
+    res.render("celebrities/new-celebrity.hbs")
 }
 })
 
