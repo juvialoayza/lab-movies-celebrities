@@ -18,6 +18,10 @@
 
     {{/each}}
 
+    <form action="/movies/{{movieDetails._id}}/edit">
+    <button>Editar pelicula</button>
+    </form>
+
     <form action="/movies/{{movieDetails._id}}/delete" method="POST">
     <button type="submit">Borrar pelicula</button>
     </form>

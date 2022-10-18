@@ -1,13 +1,18 @@
 <div>
 
-    <p>movies</p>
+    <a href="../">Go back</a>
+
+    <p>Movies List</p>
 
     {{#each moviesList}}
 
-    <li>Pelicula:{{this.title}}</li>
-
-
+    <li>
     <a href="/movies/{{_id}}/details">{{title}}</a>
+
+    </li>
+
+
+    
 
     {{/each}}
     

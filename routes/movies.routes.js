@@ -1,6 +1,7 @@
 const router = require("express").Router();
 
 const { routes } = require("../app");
+const { populate } = require("../models/Celebrity.model");
 const Celebrity = require("../models/Celebrity.model");
 const Movie = require("../models/Movie.model.js")
 
@@ -92,6 +93,46 @@ router.post("/:id/delete", async(req,res,next)=>{
 })
 
 
+//rutas para editar pelicula
+
+/*
+router.get("/:id/edit", async(req,res,next)=>{
+    const {movieId} = req.params
+    try{
+        const editedMovie = await Movie.findById(movieId)
+        const editedCast = await Celebrity.find()
+        res.render("movies/edit-movie.hbs", {
+            editedMovie,
+            editedCast
+        })
+    }catch(err){
+        next(err)
+    }
+})
+
+router.post("/:id/edit", async(req,res,next)=>{
+    const {id} = req.params
+    const {title, genre, plot, cast} = req.body
+
+    let updatedMovie = {
+        title,
+        genre,
+        plot,
+        cast
+    }
+
+    try{
+        await Movie.findByIdAndUpdate(id, updatedMovie) 
+        res.redirect("/movies")
+
+    }catch(err){
+    next(err)
+}
+
+
+
+})
+*/
 
 
 
