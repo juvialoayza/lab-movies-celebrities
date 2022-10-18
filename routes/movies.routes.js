@@ -81,11 +81,11 @@ router.get("/:movieId/details", async(req, res, next)=>{
 
 //ruta para eliminar peliculas
 
-router.post("/:id/delete", async(req,res,next)=>{
-    let{id} = req.params
+router.post("/:movieId/delete", async(req,res,next)=>{
+    let{movieId} = req.params
 
     try{
-        await Movie.findByIdAndRemove(id)
+        await Movie.findByIdAndRemove(movieId)
         res.redirect("/movies")
 
     }catch(err){
@@ -95,8 +95,8 @@ router.post("/:id/delete", async(req,res,next)=>{
 
 //rutas para editar pelicula
 
-/*
-router.get("/:id/edit", async(req,res,next)=>{
+
+router.get("/:movieId/edit", async(req,res,next)=>{
     const {movieId} = req.params
     try{
         const editedMovie = await Movie.findById(movieId)
@@ -110,8 +110,8 @@ router.get("/:id/edit", async(req,res,next)=>{
     }
 })
 
-router.post("/:id/edit", async(req,res,next)=>{
-    const {id} = req.params
+router.post("/:movieId/edit", async(req,res,next)=>{
+    const {movieId} = req.params
     const {title, genre, plot, cast} = req.body
 
     let updatedMovie = {
@@ -122,7 +122,7 @@ router.post("/:id/edit", async(req,res,next)=>{
     }
 
     try{
-        await Movie.findByIdAndUpdate(id, updatedMovie) 
+        await Movie.findByIdAndUpdate(movieId, updatedMovie) 
         res.redirect("/movies")
 
     }catch(err){
@@ -132,7 +132,7 @@ router.post("/:id/edit", async(req,res,next)=>{
 
 
 })
-*/
+
 
 
 
