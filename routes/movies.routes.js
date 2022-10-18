@@ -1,5 +1,6 @@
 const router = require("express").Router();
 
+const { routes } = require("../app");
 const Celebrity = require("../models/Celebrity.model");
 const Movie = require("../models/Movie.model.js")
 
@@ -76,6 +77,21 @@ router.get("/:movieId/details", async(req, res, next)=>{
         next(error)
     }
 })
+
+//ruta para eliminar peliculas
+
+router.post("/:id/delete", async(req,res,next)=>{
+    let{id} = req.params
+
+    try{
+        await Movie.findByIdAndRemove(id)
+        res.redirect("/movies")
+
+    }catch(err){
+    next(err)}
+})
+
+
 
 
 
