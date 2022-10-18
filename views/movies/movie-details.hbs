@@ -1,4 +1,17 @@
 <div>
 
-    <p>movie details</p>
+    <h2>movie details</h2>
+
+    {{movieDetails.title}}
+    {{movieDetails.genre}}
+    {{movieDetails.plot}}
+
+
+    {{#each movieDetails.cast}}
+
+    <p>Nombre: {{this.name}}</p>
+    <p>Ocupación: {{this.occupation}}</p>
+    <p>Cita célebre: {{this.catchPhrase}}</p>
+
+    {{/each}}
 </div>

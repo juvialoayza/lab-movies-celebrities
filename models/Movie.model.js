@@ -5,7 +5,7 @@ const movieSchema =  new mongoose.Schema({
     plot: String,
     cast:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Cast"
+        ref: "Celebrity"
 
     }]
 })
